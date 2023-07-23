@@ -4,6 +4,8 @@ import {
   FetchArticlesResponse,
   PostArticleRequestParams,
   PostArticleResponse,
+  PatchArticleRequestParams,
+  PatchArticleResponse,
 } from './types'
 
 class ApiClient {
@@ -32,6 +34,14 @@ class ApiClient {
     article: PostArticleRequestParams
   ): Promise<PostArticleResponse> {
     const { data } = await this.client.post('/article', article)
+    return data
+  }
+
+  async editArticle(
+    id: string,
+    article: PatchArticleRequestParams
+  ): Promise<PatchArticleResponse> {
+    const { data } = await this.client.patch(`/article/${id}`, article)
     return data
   }
 

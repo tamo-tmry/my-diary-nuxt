@@ -1,6 +1,1 @@
-{
-  "language": "en",
-  "version": "0.2",
-  "flagWords": [],
-  "words": ["MICROCMS", "nuxtjs", "nuxt", "testid"]
-}
+{"language":"en","version":"0.2","words":["MICROCMS","nuxtjs","nuxt","testid","axios","vuex"],"flagWords":[]}

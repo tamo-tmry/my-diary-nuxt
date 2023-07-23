@@ -25,3 +25,12 @@ export type PostArticleRequestParams = {
 export type PostArticleResponse = {
   id: string
 }
+
+export type PatchArticleRequestParams = {
+  title: string
+  content: string
+}
+
+export type PatchArticleResponse = {
+  id: string
+}
