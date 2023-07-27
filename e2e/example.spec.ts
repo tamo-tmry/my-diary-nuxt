@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test'
 require('dotenv').config()
 
-const appUrl = process.env.APP_URL!
+const appUrl = process.env.APP_URL || 'http://127.0.0.1:3000/'
+
+console.log('DEBUG appUrl: ', appUrl)
 
 test('has link', async ({ page }) => {
   await page.goto(appUrl)
