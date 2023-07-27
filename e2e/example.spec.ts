@@ -3,7 +3,7 @@ require('dotenv').config()
 
 const appUrl = process.env.APP_URL || 'http://127.0.0.1:3000/'
 
-console.log('DEBUG appUrl: ', appUrl)
+console.log('DEBUG appUrl: ', process.env.APP_URL)
 
 test('has link', async ({ page }) => {
   await page.goto(appUrl)
