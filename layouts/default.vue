@@ -70,3 +70,11 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+.container {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+</style>
