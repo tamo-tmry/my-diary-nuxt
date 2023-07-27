@@ -8,6 +8,8 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.24.0-focal
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -22,7 +24,6 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test
         env:
-          APP_URL: ${{ secrets.APP_URL }}
           API_KEY: ${{ secrets.API_KEY }}
           API_BASE_URL: ${{ secrets.API_BASE_URL }}
       - uses: actions/upload-artifact@v3
