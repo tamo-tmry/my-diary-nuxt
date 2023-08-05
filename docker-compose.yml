@@ -7,4 +7,4 @@ services:
     volumes:
       - ./:/work
     network_mode: host
-    command: npx playwright test
+    command: yarn vrt

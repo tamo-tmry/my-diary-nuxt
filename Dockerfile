@@ -9,5 +9,7 @@ RUN apt-get update && apt-get install -y \
     python3
 
 RUN yarn install
+RUN yarn build
+RUN npx playwright install --with-deps
 
-CMD ["npx", "playwright", "test"]
+CMD ["yarn", "vrt"]
