@@ -77,4 +77,8 @@ export default {
       handler: '~/bff/index.ts',
     },
   ],
+
+  server: {
+    port: 8080,
+  },
 }
