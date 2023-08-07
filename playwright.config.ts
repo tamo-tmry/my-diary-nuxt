@@ -72,6 +72,7 @@ export default defineConfig({
   webServer: {
     command: 'yarn build && yarn start',
     url: 'http://localhost:8080',
+    timeout: 10000, // Add this line
     reuseExistingServer: !process.env.CI,
   },
   snapshotPathTemplate:
