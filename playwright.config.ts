@@ -70,9 +70,9 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'yarn build && yarn start',
+    command: 'yarn start',
     url: 'http://localhost:8080',
-    timeout: 20000, // Add this line
+    timeout: 120000,
     reuseExistingServer: !process.env.CI,
   },
   snapshotPathTemplate:
