@@ -16,20 +16,16 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: yarn
-      - name: install playwright browsers
-        run: npx playwright install --with-deps
-      - name: Run test
-        run: yarn vrt
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Docker Compose build
+        run: docker compose build
+
+      - name: Run playwright with yarn vrt
+        run: docker compose run playwright yarn vrt
         env:
           API_BASE_URL: ${{ secrets.API_BASE_URL }}
           API_KEY: ${{ secrets.API_KEY }}
           APP_URL: ${{ secrets.APP_URL}}
-
-      # - name: Set up Docker Buildx
-      #   uses: docker/setup-buildx-action@v2
-      #
-      # - name: Docker Compose build
-      #   run: docker compose build
-
-      # - name: Run playwright with yarn vrt
-      # run: docker compose run playwright yarn vrt
