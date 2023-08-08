@@ -16,12 +16,14 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: yarn
+      - name: Run test
+        run: yarn vrt
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+      # - name: Set up Docker Buildx
+      #   uses: docker/setup-buildx-action@v2
+      #
+      # - name: Docker Compose build
+      #   run: docker compose build
 
-      - name: Docker Compose build
-        run: docker compose build
-
-      - name: Run playwright with yarn vrt
-        run: docker compose run playwright yarn vrt
+      # - name: Run playwright with yarn vrt
+      # run: docker compose run playwright yarn vrt
