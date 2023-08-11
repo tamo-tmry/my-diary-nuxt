@@ -16,5 +16,9 @@ module.exports = {
     '<rootDir>/pages/**/*.vue',
     '<rootDir>/bff/**/*.ts',
   ],
-  testEnvironment: 'jsdom',
+  testMatch: [
+    '<rootDir>/bff/**/*.test.ts',
+    '<rootDir>/components/**/*.test.ts',
+  ],
+  testEnvironment: 'jest-environment-jsdom',
 }
