@@ -17,6 +17,6 @@ describe('記事更新のテスト', () => {
       content: 'content',
     }
     const result = await ArticlePatchService('articleTestId', article)
-    expect(result).toEqual({ id: 'articleTestId' })
+    expect(result).toEqual('articleTestId')
   })
 })
