@@ -1,15 +1,12 @@
 <template>
   <div>
-    <v-form>
-      <v-text-field v-model="title" label="タイトル"></v-text-field>
-      <v-text-field v-model="content" label="本文"></v-text-field>
-      <v-btn @click="registerArticle">登録</v-btn>
-    </v-form>
+    <ArticleFrom action-text="登録" @click-action="registerArticle" />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import ArticleFrom from '~/components/ArticleForm.vue'
 
 type RequestParams = {
   title: string
@@ -18,23 +15,24 @@ type RequestParams = {
 
 export default Vue.extend({
   name: 'RegisterPage',
+  components: {
+    ArticleFrom,
+  },
   data() {
     return {
       title: '',
       content: '',
     }
   },
-  computed: {
-    requestParams(): RequestParams {
+  methods: {
+    requestParams(title: string, content: string): RequestParams {
       return {
-        title: this.title,
-        content: this.content,
+        title,
+        content,
       }
     },
-  },
-  methods: {
-    async registerArticle() {
-      await this.$axios.post('/api/article', this.requestParams)
+    async registerArticle(title: string, content: string) {
+      await this.$axios.post('/api/article', this.requestParams(title, content))
       this.$store.dispatch('alert/addAlertMessage', `記事を登録しました`)
       setTimeout(() => this.$store.dispatch('alert/removeAlertMessage'), 3000)
       this.$router.push('/')
