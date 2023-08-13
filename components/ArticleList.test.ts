@@ -35,5 +35,5 @@ test('', () => {
     vuetify,
     routes: router,
   })
-  screen.getByText('article-title-1')
+  expect(screen.getByText('article-title-1')).toBeInTheDocument()
 })
