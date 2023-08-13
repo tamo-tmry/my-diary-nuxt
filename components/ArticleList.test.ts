@@ -87,3 +87,27 @@ test('投稿がない場合、「投稿がありません。」が表示され�
   expect(list).toBeNull()
   expect(screen.getByText('投稿がありません。')).toBeInTheDocument()
 })
+
+test('IDに基づいたリンクが表示される', () => {
+  const vuetify = new Vuetify()
+
+  const articles = [
+    {
+      id: 'article-id-1',
+      title: 'article-title-1',
+      content: 'article-content-1',
+    },
+  ]
+
+  render(ArticleList, {
+    props: {
+      articles,
+    },
+    vuetify,
+    routes: router,
+  })
+  expect(screen.getByRole('listitem')).toHaveAttribute(
+    'href',
+    '#/article/article-id-1'
+  )
+})
