@@ -1,8 +1,11 @@
 <template>
   <v-form>
-    <v-text-field v-model="title" label="タイトル"></v-text-field>
-    <v-text-field v-model="content" label="本文"></v-text-field>
-    <v-btn @click="clickAction">{{ actionText }}</v-btn>
+    <fieldset>
+      <legend>投稿の設定</legend>
+      <v-text-field v-model="title" label="タイトル"></v-text-field>
+      <v-text-field v-model="content" label="本文"></v-text-field>
+      <v-btn :disabled="!hasTitle" @click="clickAction">{{ actionText }}</v-btn>
+    </fieldset>
   </v-form>
 </template>
 
@@ -29,6 +32,11 @@ export default Vue.extend({
       title: this.propTitle,
       content: this.propContent,
     }
+  },
+  computed: {
+    hasTitle(): boolean {
+      return Boolean(this.title)
+    },
   },
   methods: {
     clickAction() {
