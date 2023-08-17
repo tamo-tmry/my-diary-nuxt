@@ -111,3 +111,35 @@ test('IDに基づいたリンクが表示される', () => {
     '#/article/article-id-1'
   )
 })
+
+test('Snapshot: 一覧表示される', () => {
+  const vuetify = new Vuetify()
+
+  const articles = [
+    {
+      id: 'article-id-1',
+      title: 'article-title-1',
+      content: 'article-content-1',
+    },
+    {
+      id: 'article-id-2',
+      title: 'article-title-2',
+      content: 'article-content-2',
+    },
+    {
+      id: 'article-id-3',
+      title: 'article-title-3',
+      content: 'article-content-3',
+    },
+  ]
+
+  const { container } = render(ArticleList, {
+    props: {
+      articles,
+    },
+    vuetify,
+    routes: router,
+  })
+
+  expect(container).toMatchSnapshot()
+})

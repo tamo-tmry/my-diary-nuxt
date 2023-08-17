@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot: 一覧表示される 1`] = `
+<div>
+  <div>
+    <div
+      class="v-list v-sheet theme--light"
+      role="list"
+    >
+      <a
+        class="v-list-item v-list-item--link theme--light"
+        href="#/article/article-id-1"
+        role="listitem"
+        tabindex="0"
+      >
+        <div
+          class="v-list-item__title"
+        >
+          article-title-1
+        </div>
+         
+        <div
+          class="v-list-item__subtitle"
+        >
+          article-content-1
+        </div>
+      </a>
+      <a
+        class="v-list-item v-list-item--link theme--light"
+        href="#/article/article-id-2"
+        role="listitem"
+        tabindex="0"
+      >
+        <div
+          class="v-list-item__title"
+        >
+          article-title-2
+        </div>
+         
+        <div
+          class="v-list-item__subtitle"
+        >
+          article-content-2
+        </div>
+      </a>
+      <a
+        class="v-list-item v-list-item--link theme--light"
+        href="#/article/article-id-3"
+        role="listitem"
+        tabindex="0"
+      >
+        <div
+          class="v-list-item__title"
+        >
+          article-title-3
+        </div>
+         
+        <div
+          class="v-list-item__subtitle"
+        >
+          article-content-3
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;
