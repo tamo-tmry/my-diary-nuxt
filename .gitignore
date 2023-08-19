@@ -91,3 +91,7 @@ sw.*
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+# Storybook
+.nuxt-storybook
+storybook-static
