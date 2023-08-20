@@ -13,7 +13,8 @@
     "lint": "yarn lint:js && yarn lint:prettier",
     "lintfix": "prettier --write --list-different . && yarn lint:js --fix",
     "test": "jest",
-    "vrt": "playwright test"
+    "vrt": "playwright test",
+    "storybook": "npx nuxt storybook"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
@@ -35,6 +36,7 @@
     "@nuxtjs/storybook": "^4.3.2",
     "@nuxtjs/vuetify": "^1.12.3",
     "@playwright/test": "^1.36.2",
+    "@storybook/addon-viewport": "^7.3.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/user-event": "^14.4.3",
     "@testing-library/vue": "5",
