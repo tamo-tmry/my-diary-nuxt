@@ -82,5 +82,7 @@ export default {
     port: 8080,
   },
 
-  storybook: {},
+  storybook: {
+    stories: ['~/components/**/*.stories.*'],
+  },
 }

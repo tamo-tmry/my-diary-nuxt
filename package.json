@@ -14,7 +14,11 @@
     "lintfix": "prettier --write --list-different . && yarn lint:js --fix",
     "test": "jest",
     "vrt": "playwright test",
-    "storybook": "npx nuxt storybook"
+    "storybook": "nuxt storybook",
+    "storybook:build": "nuxt storybook build",
+    "storycap:expected": "storycap ---outDir expected --serverCmd \"npx http-server storybook-static -p 6006\" http://localhost:6006",
+    "storycap:actual": "storycap --outDir actual --serverCmd \"npx http-server storybook-static -p 6006\" http://localhost:6006",
+    "storycap:diff": "npx reg-cli actual expected diff -R index.html && open index.html"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
