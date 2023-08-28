@@ -95,3 +95,4 @@ sw.*
 # Storybook
 .nuxt-storybook
 storybook-static
+.reg
