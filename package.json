@@ -19,7 +19,7 @@
     "storycap:expected": "storycap ---outDir expected --serverCmd \"npx http-server storybook-static -p 6006\" http://localhost:6006",
     "storycap:actual": "storycap --outDir actual --serverCmd \"npx http-server storybook-static -p 6006\" http://localhost:6006",
     "storycap:diff": "npx reg-cli actual expected diff -R index.html && open index.html",
-    "vrt:snapshot": "storycap http://localhost:6006 --serverCmd \"npx http-server storybook-static --ci -p 6006\" --serverTimeout 600000",
+    "vrt:snapshot": "storycap --serverCmd \"npx http-server storybook-static -a localhost -p 6006\" http://localhost:6006",
     "vrt:run": "reg-suit run"
   },
   "dependencies": {
