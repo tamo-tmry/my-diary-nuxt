@@ -76,9 +76,9 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-1
-      - name: Install Fonts
-        run: sudo apt-get install fonts-ipafont-gothic fonts-ipafont-mincho
       - name: Run Storycap
         run: yarn vrt:snapshot
       - name: Run reg-suit
-        run: yarn vrt:run
+        script:
+          - git checkout $CI_COMMIT_REF_NAME || git checkout -b $CI_COMMIT_REF_NAME && git pull
+          - yarn vrt:run
