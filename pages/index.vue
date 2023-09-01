@@ -2,6 +2,7 @@
   <div>
     <v-btn to="/article/new">新規登録</v-btn>
     <ArticleList :articles="articles" />
+    aaaaaaaaaaa
   </div>
 </template>
 
