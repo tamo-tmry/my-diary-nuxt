@@ -78,7 +78,9 @@ jobs:
           aws-region: ap-northeast-1
       - name: Run Storycap
         run: yarn vrt:snapshot
-      - name: workaround for detached HEAD
-        run: git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
+      - name: Custom Git Checkout
+        run: |
+          git checkout ${{ github.head_ref }} || git checkout -b ${{ github.head_ref }}
+          git pull
       - name: Run reg-suit
         run: yarn vrt:run
