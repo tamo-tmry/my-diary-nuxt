@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-btn to="/article/new">新規登録</v-btn>
+    <v-btn to="/article/new">新規登録aaaaaaaa</v-btn>
     <ArticleList :articles="articles" />
   </div>
 </template>
