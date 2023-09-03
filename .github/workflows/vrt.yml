@@ -3,6 +3,8 @@ name: VRT by reg-suit
 on:
   pull_request:
     branches: [main]
+  push:
+    branches: [main]
 
 env:
   REG_NOTIFY_CLIENT_ID: ${{ secrets.REG_NOTIFY_CLIENT_ID }}
@@ -79,9 +81,5 @@ jobs:
           aws-region: ap-northeast-1
       - name: Run Storycap
         run: yarn vrt:snapshot
-      - name: Check Source Branch
-        run: |
-          git checkout ${{ github.head_ref }} || git checkout -b ${{ github.head_ref }}
-          git pull
       - name: Run reg-suit
         run: yarn vrt:run
