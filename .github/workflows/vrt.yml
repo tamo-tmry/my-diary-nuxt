@@ -3,6 +3,8 @@ name: Run VRT
 on:
   pull_request:
     branches: [main, develop]
+  push:
+    branches: [main, develop]
 
 env:
   REG_NOTIFY_CLIENT_ID: ${{ secrets.REG_NOTIFY_CLIENT_ID }}
