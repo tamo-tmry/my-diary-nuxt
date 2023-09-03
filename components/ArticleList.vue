@@ -1,12 +1,17 @@
 <template>
   <div>
     <v-list v-if="hasArticle">
-      <v-list-item v-for="article in articles" :key="article.id" :to="`/article/${article.id}`">
+      <v-list-item
+        v-for="article in articles"
+        :key="article.id"
+        :to="`/article/${article.id}`"
+      >
         <v-list-item-title>{{ article.title }}</v-list-item-title>
         <v-list-item-subtitle>{{ article.content }}</v-list-item-subtitle>
       </v-list-item>
     </v-list>
     <p v-else>投稿がありません。</p>
+    <p>afekwajfowafjwawaifwjfi</p>
   </div>
 </template>
 
