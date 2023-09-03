@@ -7,6 +7,7 @@
       </v-list-item>
     </v-list>
     <p v-else>投稿がありません。</p>
+    <p>fjewifjwfjwij</p>
   </div>
 </template>
 
