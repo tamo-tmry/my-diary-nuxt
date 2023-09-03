@@ -1,10 +1,8 @@
-name: Run VRT
+name: VRT by reg-suit
 
 on:
   pull_request:
-    branches: [main, develop]
-  push:
-    branches: [main, develop]
+    branches: [main]
 
 env:
   REG_NOTIFY_CLIENT_ID: ${{ secrets.REG_NOTIFY_CLIENT_ID }}
@@ -27,6 +25,7 @@ jobs:
       - name: Install dependencies
         if: steps.node_modules_cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
+
   build-storybook:
     needs: install
     runs-on: ubuntu-latest
@@ -56,7 +55,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0 # この指定がないと比較に失敗する
+          fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -80,7 +79,7 @@ jobs:
           aws-region: ap-northeast-1
       - name: Run Storycap
         run: yarn vrt:snapshot
-      - name: Custom Git Checkout
+      - name: Check Source Branch
         run: |
           git checkout ${{ github.head_ref }} || git checkout -b ${{ github.head_ref }}
           git pull
