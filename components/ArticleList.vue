@@ -6,7 +6,7 @@
         <v-list-item-subtitle>{{ article.content }}</v-list-item-subtitle>
       </v-list-item>
     </v-list>
-    <p v-else>投稿がありません。</p>
+    <p v-else>投稿がありませんnnnnnnnnnnn。</p>
   </div>
 </template>
 
