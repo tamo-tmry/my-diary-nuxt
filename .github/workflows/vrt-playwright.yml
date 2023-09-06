@@ -3,6 +3,8 @@ name: VRT by Playwright
 on:
   pull_request:
     branches: [main]
+  push:
+    branches: [main]
 
 jobs:
   vrt-by-playwright:
