@@ -9,6 +9,7 @@ test('has link', async ({ page }) => {
 
 test('vrt test', async ({ page }) => {
   await page.goto('/')
+  await page.waitForTimeout(5000)
   const registerElement = page.getByRole('link', { name: '新規登録' })
   await expect(registerElement).toBeVisible()
   await expect(page).toHaveScreenshot()
