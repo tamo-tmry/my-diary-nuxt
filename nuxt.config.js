@@ -1,4 +1,4 @@
-export default {
+export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
@@ -70,4 +70,4 @@ export default {
   storybook: {
     stories: ['~/components/**/*.stories.*'],
   },
-}
+})
