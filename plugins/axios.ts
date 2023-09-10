@@ -1,6 +1,6 @@
 import { Axios } from 'axios'
 
-export default defineNuxtConfig(() => {
+export default defineNuxtPlugin(() => {
   return {
     provide: {
       axios: new Axios({
