@@ -16,6 +16,7 @@
     "playwright-vrt:test": "playwright test",
     "playwright-vrt:build": "docker compose build",
     "playwright-vrt:run": "docker compose run playwright yarn playwright-vrt:test",
+    "playwright-vrt:update-screenshots": "docker compose run playwright yarn playwright-vrt:test --update-snapshots",
     "storybook": "nuxt storybook",
     "storybook:build": "nuxt storybook build",
     "storycap:expected": "storycap ---outDir expected --serverCmd \"npx http-server storybook-static -p 6006\" http://localhost:6006",
