@@ -51,7 +51,7 @@ export default {
           to: '/article/new',
         },
       ],
-      title: 'diary',
+      title: 'my-diary',
     }
   },
   computed: {
