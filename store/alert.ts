@@ -1,29 +1,30 @@
 import { GetterTree, ActionTree, MutationTree } from 'vuex'
 
-export const state = () => ({
-  alertMessage: '',
-})
-
-export type RootState = ReturnType<typeof state>
-
-export const getters: GetterTree<RootState, RootState> = {
-  alertMessage: (state) => state.alertMessage,
+type RootState = {
+  alertMessage: string
 }
 
-export const actions: ActionTree<RootState, RootState> = {
-  addAlertMessage({ commit }, message: string) {
-    commit('ADD', message)
-  },
-  removeAlertMessage({ commit }) {
-    commit('REMOVE')
-  },
-}
-
-export const mutations: MutationTree<RootState> = {
-  ADD: (state, message: string) => {
-    state.alertMessage = message
-  },
-  REMOVE: (state) => {
-    state.alertMessage = ''
-  },
+export const alert = {
+  state: () => ({
+    alertMessage: '',
+  }),
+  getters: {
+    alertMessage: (state) => state.alertMessage,
+  } as GetterTree<RootState, RootState>,
+  actions: {
+    addAlertMessage({ commit }, message: string) {
+      commit('ADD', message)
+    },
+    removeAlertMessage({ commit }) {
+      commit('REMOVE')
+    },
+  } as ActionTree<RootState, RootState>,
+  mutations: {
+    ADD: (state, message: string) => {
+      state.alertMessage = message
+    },
+    REMOVE: (state) => {
+      state.alertMessage = ''
+    },
+  } as MutationTree<RootState>,
 }
