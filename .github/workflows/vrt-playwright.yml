@@ -26,4 +26,4 @@ jobs:
         run: yarn playwright-vrt:build
 
       - name: Run playwright with yarn vrt
-        run: yarn playwright-vrt:run -e API_BASE_URL=${{ secrets.API_BASE_URL }} -e API_KEY=${{ secrets.API_KEY }} -e APP_URL=${{ secrets.APP_URL }}
+        run: docker compose run -e API_BASE_URL=${{ secrets.API_BASE_URL }} -e API_KEY=${{ secrets.API_KEY }} -e APP_URL=${{ secrets.APP_URL }} playwright yarn playwright-vrt:test
