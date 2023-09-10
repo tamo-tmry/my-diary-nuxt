@@ -24,7 +24,7 @@
         <v-alert v-if="hasAlertMessage" type="success">{{
           alertMessage
         }}</v-alert>
-        <Nuxt />
+        <slot />
       </v-container>
     </v-main>
     <v-footer app>

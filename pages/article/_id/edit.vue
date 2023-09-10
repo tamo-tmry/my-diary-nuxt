@@ -1,12 +1,16 @@
 <template>
   <div>
-    <ArticleFrom :prop-title="title" :prop-content="content" action-text="更新" @click-action="registerArticle" />
+    <ArticleFrom
+      :prop-title="title"
+      :prop-content="content"
+      action-text="更新"
+      @click-action="registerArticle"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { Context } from '@nuxt/types'
-import Vue from 'vue'
 import { Article } from '~/bff/types'
 import ArticleFrom from '~/components/ArticleForm.vue'
 
@@ -15,7 +19,7 @@ type RequestParams = {
   content: string
 }
 
-export default Vue.extend({
+export default {
   name: 'EditPage',
   components: {
     ArticleFrom,
@@ -56,5 +60,5 @@ export default Vue.extend({
       setTimeout(() => this.$store.dispatch('alert/removeAlertMessage'), 3000)
     },
   },
-})
+}
 </script>

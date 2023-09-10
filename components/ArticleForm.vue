@@ -10,9 +10,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
+export default {
   props: {
     propTitle: {
       type: String,
@@ -43,5 +41,5 @@ export default Vue.extend({
       this.$emit('click-action', { title: this.title, content: this.content })
     },
   },
-})
+}
 </script>

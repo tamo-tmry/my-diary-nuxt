@@ -5,7 +5,6 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
 import ArticleFrom from '~/components/ArticleForm.vue'
 
 type RequestParams = {
@@ -13,7 +12,7 @@ type RequestParams = {
   content: string
 }
 
-export default Vue.extend({
+export default {
   name: 'RegisterPage',
   components: {
     ArticleFrom,
@@ -38,5 +37,5 @@ export default Vue.extend({
       this.$router.push('/')
     },
   },
-})
+}
 </script>

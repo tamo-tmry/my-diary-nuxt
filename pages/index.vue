@@ -6,18 +6,21 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import { Context } from '@nuxt/types'
 import ArticleList from '~/components/ArticleList.vue'
 
-export default Vue.extend({
+export default {
   name: 'IndexPage',
   components: {
     ArticleList,
   },
-  async asyncData({ $axios }: Context) {
-    const { data: articles } = await $axios.get('/api/article')
+  data() {
+    return {
+      articles: [],
+    }
+  },
+  async created() {
+    const { data: articles } = await this.$axios.get('/api/article')
     return { articles }
   },
-})
+}
 </script>

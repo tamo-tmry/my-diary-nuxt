@@ -12,11 +12,10 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
 import { Context } from '@nuxt/types'
 import { Article } from '~/bff/types/index'
 
-export default Vue.extend({
+export default {
   name: 'DetailPage',
   async asyncData({ $axios, params }: Context) {
     const id = params.id
@@ -34,5 +33,5 @@ export default Vue.extend({
       this.$router.push('/')
     },
   },
-})
+}
 </script>
