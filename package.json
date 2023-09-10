@@ -34,7 +34,7 @@
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10",
-    "vuetify": "^2.6.10"
+    "vuetify": "^3.4.0-alpha.1"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
@@ -65,9 +65,11 @@
     "reg-notify-github-plugin": "^0.12.2",
     "reg-publish-s3-plugin": "^0.12.2",
     "reg-suit": "^0.12.2",
+    "sass": "^1.66.1",
     "storycap": "^4.2.0",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
+    "vite-plugin-vuetify": "^1.0.2",
     "vue-jest": "^3.0.4"
   }
 }
