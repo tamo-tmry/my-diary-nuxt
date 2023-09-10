@@ -1,3 +1,5 @@
+import vuetify from 'vite-plugin-vuetify'
+
 export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
@@ -44,14 +46,6 @@ export default defineNuxtConfig({
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
-    // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
-  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
