@@ -20,7 +20,7 @@ export default {
   },
   async created() {
     const { data: articles } = await this.$axios.get('/api/article')
-    return { articles }
+    this.articles = articles
   },
 }
 </script>

@@ -50,16 +50,11 @@ export default defineNuxtConfig({
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
 
-  serverMiddleware: [
+  serverHandlers: [
     {
-      path: '/api',
-      handler: '~/bff/index.ts',
+      handler: './bff/index.ts',
     },
   ],
-
-  server: {
-    port: 8080,
-  },
 
   storybook: {
     stories: ['~/components/**/*.stories.*'],

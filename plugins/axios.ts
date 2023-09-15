@@ -1,9 +1,9 @@
-import { Axios } from 'axios'
+import axios from 'axios'
 
 export default defineNuxtPlugin(() => {
   return {
     provide: {
-      axios: new Axios({
+      axios: axios.create({
         baseURL: 'http://localhost:3000',
       }),
     },
