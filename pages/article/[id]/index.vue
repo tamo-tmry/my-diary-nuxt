@@ -13,15 +13,24 @@
 
 <script lang="ts">
 import { Context } from '@nuxt/types'
-import { Article } from '~/bff/types/index'
+// import { Article } from '~/bff/types/index'
+import { useRoute, useRouter } from 'vue-router'
 
 export default {
   name: 'DetailPage',
-  async asyncData({ $axios, params }: Context) {
-    const id = params.id
-    const { data }: { data: Article } = await $axios.get(`/api/article/${id}`)
-    return { data }
+  asyncData() {
+    console.log('asyncData')
   },
+  async created() {
+    const route = useRoute()
+    console.log('router: ', route.params._id)
+    const { data, pending, error, refresh } = await useAsyncData('mountains', () => $fetch(`/api/article/${route.params.id}`))
+  },
+  
+  // { $axios, params }: Context) {
+  //   const id = params.id
+  //   const { data }: { data: Article } = await $axios.get(`/api/article/${id}`)
+  //   return { data }
   methods: {
     async deleteArticle(id: string) {
       await this.$axios.delete(`/api/article/${id}`)

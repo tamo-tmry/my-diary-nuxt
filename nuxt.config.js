@@ -11,16 +11,9 @@ export default defineNuxtConfig({
     },
   },
 
-  vite: {
-    ssr: {
-      noExternal: ['vuetify'],
-    },
-    define: {
-      'process.env.DEBUG': false,
-    },
-  },
-
-  css: ['@/assets/main.scss'],
+  css: [
+    '@mdi/font/css/materialdesignicons.css'
+  ],
 
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,

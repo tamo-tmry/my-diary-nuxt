@@ -1,28 +1,35 @@
-import { createVuetify } from 'vuetify'
+import { createVuetify, ThemeDefinition } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-import colors from 'vuetify/lib/util/colors'
+
+export enum ThemeName {
+  Light = 'light',
+  Dark = 'dark'
+}
+
+const darkTheme: ThemeDefinition = {
+  dark: true,
+  colors: {
+    primary: '#2196F3',
+    secondary: '#424242',
+    accent: '#FF4081',
+    error: '#FF5252',
+    info: '#2196F3',
+    success: '#4CAF50',
+    warning: '#FB8C00'
+  }
+}
 
 export default defineNuxtPlugin((nuxtApp) => {
   const vuetify = createVuetify({
     components,
     directives,
-    // TODO: nuxt.configからとりあえず移しただけ、後で調整
-    customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      defaultTheme: 'dark',
       themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
-        },
-      },
-    },
+        [ThemeName.Dark]: darkTheme
+      }
+    }
   })
 
   nuxtApp.vueApp.use(vuetify)
